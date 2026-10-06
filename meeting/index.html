@@ -48,11 +48,49 @@
   transform:translateY(-1px);
 }.hero p{margin:0;color:#dce8f3}.school{display:inline-block;margin-top:14px;background:rgba(10,164,122,.18);padding:6px 12px;border-radius:999px}
 .intro,.section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}.intro{margin-top:16px;padding:18px 20px}
-.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0;position:sticky;top:0;z-index:10;background:rgba(244,247,251,.94);padding:10px 0}
-button{border:0;border-radius:12px;padding:11px 16px;font-weight:700;cursor:pointer;font-family:inherit}.primary{background:var(--green);color:#fff}.secondary{background:#fff;color:var(--navy);border:1px solid var(--border)}.danger{background:#fff;color:var(--danger);border:1px solid #f0c8c4}.status{margin-right:auto;color:var(--muted);font-size:13px;align-self:center}
+
+button{border:0;border-radius:12px;padding:11px 16px;font-weight:700;cursor:pointer;font-family:inherit}.primary{background:var(--green);color:#fff}.secondary{background:#fff;color:var(--navy);border:1px solid var(--border)}.danger{background:#fff;color:var(--danger);border:1px solid #f0c8c4}
 .section{margin-bottom:14px;overflow:hidden}.qhead{display:flex;gap:12px;align-items:flex-start;padding:18px 18px 8px}.num{min-width:38px;height:38px;border-radius:11px;background:var(--greenSoft);color:var(--green);display:grid;place-items:center;font-weight:800;border:1px solid #c9ece0}.question{font-weight:800;color:var(--navy);font-size:17px}.hint{font-size:13px;color:var(--muted)}
 textarea{width:calc(100% - 36px);margin:0 18px 18px;min-height:105px;resize:vertical;border:1px solid var(--border);border-radius:14px;padding:14px 15px;font-family:inherit;font-size:15px;line-height:1.8;background:#fbfdff;color:var(--text);outline:none}
-textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(10,164,122,.12);background:#fff}.footer-note{text-align:center;color:var(--muted);font-size:13px;padding:18px}
+textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(10,164,122,.12);background:#fff}.submit-area{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  margin:20px 0 8px;
+  padding:24px 20px;
+  text-align:center;
+}
+.submit-title{
+  color:var(--navy);
+  font-weight:800;
+  font-size:18px;
+  margin-bottom:2px;
+}
+.submit-note{
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:14px;
+}
+.whatsapp-final{
+  width:min(100%,460px);
+  background:var(--green);
+  color:#fff;
+  border:0;
+  border-radius:14px;
+  padding:14px 20px;
+  font-size:16px;
+  font-weight:800;
+  box-shadow:0 8px 22px rgba(10,164,122,.16);
+}
+.whatsapp-final:hover{filter:brightness(.97)}
+.submit-phone{
+  margin-top:9px;
+  color:var(--muted);
+  font-size:13px;
+  direction:ltr;
+}
+.footer-note{text-align:center;color:var(--muted);font-size:13px;padding:18px}
 .footer-note a{color:var(--navy);font-weight:700;text-decoration:none}
 .footer-note a:hover{text-decoration:underline}
 .toast{position:fixed;left:22px;bottom:22px;background:#102a43;color:#fff;padding:12px 16px;border-radius:12px;opacity:0;transform:translateY(12px);pointer-events:none;transition:.25s}.toast.show{opacity:1;transform:none}
@@ -65,8 +103,8 @@ textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(10,164,122,.1
   text-align:right;
 }
 .hero-credit a{font-size:14px}
-.wrap{padding:12px}.hero{padding:22px 18px;border-radius:18px}.qhead{padding:15px 14px 6px}textarea{width:calc(100% - 28px);margin:0 14px 14px}button{flex:1 1 45%}.status{width:100%;margin:0;text-align:center}}
-@media print{body{background:#fff}.wrap{max-width:none;padding:0}.toolbar,.toast{display:none!important}.hero{box-shadow:none;border:1px solid #ccd7e2;background:#fff!important;color:#000;padding:12px 0;border-radius:0}.hero p,.school{color:#333;background:none}
+.wrap{padding:12px}.hero{padding:22px 18px;border-radius:18px}.qhead{padding:15px 14px 6px}textarea{width:calc(100% - 28px);margin:0 14px 14px}.whatsapp-final{width:100%}}
+@media print{body{background:#fff}.wrap{max-width:none;padding:0}.toast{display:none!important}.hero{box-shadow:none;border:1px solid #ccd7e2;background:#fff!important;color:#000;padding:12px 0;border-radius:0}.hero p,.school{color:#333;background:none}
 .hero-credit{position:static;margin-top:10px;text-align:right}
 .hero-credit .credit-label{color:#555}
 .hero-credit a{color:#000;border-bottom:0}.intro,.section{box-shadow:none;break-inside:avoid}textarea{border:0;background:#fff;min-height:70px}.footer-note{color:#444}}
@@ -86,14 +124,15 @@ textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(10,164,122,.1
 </div>
 </section>
 <section class="intro"><strong>التعليمات:</strong> يكفي في كل بند سطر أو سطران، مع ذكر رقم أو شاهد مختصر إن وجد. يتم الحفظ تلقائيًا على هذا الجهاز أثناء الكتابة.</section>
-<div class="toolbar">
-<button class="primary" id="copyBtn">نسخ الإجابات كاملة</button>
-<button class="secondary" id="printBtn">طباعة / حفظ PDF</button>
-<button class="secondary" id="downloadBtn">تنزيل ملف نصي</button>
-<button class="danger" id="clearBtn">مسح الإجابات</button>
-<span class="status" id="saveStatus">الحفظ التلقائي مفعّل</span>
-</div>
+
 <div id="questions"></div>
+
+<section class="submit-area">
+  <div class="submit-title">بعد إكمال الإجابات</div>
+  <div class="submit-note">أرسل النموذج مباشرة عبر واتساب.</div>
+  <button class="whatsapp-final" id="whatsappBtn">إرسال الإجابات لمحمد آل سحمان</button>
+  <div class="submit-phone">٠٥٤٣٣٨٠٩٠١</div>
+</section>
 <div class="footer-note">
 هذا النموذج لإعداد ورقة العمل الخاصة بلقاء فريق التقويم الخارجي.
 </div>
@@ -126,13 +165,17 @@ const items = [
 const root=document.getElementById("questions"), key="badr_external_evaluation_meeting_answers_v1";
 function load(){try{return JSON.parse(localStorage.getItem(key)||"{}")}catch(e){return {}}}
 const state=load();
-items.forEach((it,i)=>{const sec=document.createElement("section");sec.className="section";const n=i+1;sec.innerHTML=`<div class="qhead"><div class="num">${n}</div><div><div class="question">${it[0]}</div><div class="hint">${it[1]}</div></div></div><textarea id="q${n}" placeholder="اكتب الإجابة هنا..."></textarea>`;root.appendChild(sec);const ta=sec.querySelector("textarea");ta.value=state["q"+n]||"";ta.addEventListener("input",()=>{state["q"+n]=ta.value;localStorage.setItem(key,JSON.stringify(state));const s=document.getElementById("saveStatus");s.textContent="تم الحفظ تلقائيًا";clearTimeout(window._st);window._st=setTimeout(()=>s.textContent="الحفظ التلقائي مفعّل",1500)})});
+items.forEach((it,i)=>{const sec=document.createElement("section");sec.className="section";const n=i+1;sec.innerHTML=`<div class="qhead"><div class="num">${n}</div><div><div class="question">${it[0]}</div><div class="hint">${it[1]}</div></div></div><textarea id="q${n}" placeholder="اكتب الإجابة هنا..."></textarea>`;root.appendChild(sec);const ta=sec.querySelector("textarea");ta.value=state["q"+n]||"";ta.addEventListener("input",()=>{state["q"+n]=ta.value;localStorage.setItem(key,JSON.stringify(state));/* الحفظ التلقائي يعمل بصمت */})});
 function buildText(){let out="نموذج إعداد لقاء فريق التقويم الخارجي\nمتوسطة بدر الكبرى\n====================================\n\n";items.forEach((it,i)=>{const v=(state["q"+(i+1)]||"").trim();out+=`${i+1}) ${it[0]}\n${v||"لم تتم الإجابة بعد"}\n\n`});return out}
 function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2200)}
-document.getElementById("copyBtn").onclick=async()=>{const text=buildText();try{await navigator.clipboard.writeText(text)}catch(e){const ta=document.createElement("textarea");ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove()}toast("تم نسخ الإجابات كاملة")};
-document.getElementById("printBtn").onclick=()=>window.print();
-document.getElementById("downloadBtn").onclick=()=>{const blob=new Blob([buildText()],{type:"text/plain;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="اجابات-لقاء-فريق-التقويم-الخارجي.txt";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),500)};
-document.getElementById("clearBtn").onclick=()=>{if(confirm("هل تريد مسح جميع الإجابات المحفوظة على هذا الجهاز؟")){localStorage.removeItem(key);document.querySelectorAll("textarea").forEach(x=>x.value="");Object.keys(state).forEach(k=>delete state[k]);toast("تم مسح الإجابات")}};
+
+document.getElementById("whatsappBtn").onclick=()=>{
+  const text = buildText();
+  const phone = "966543380901";
+  const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(text);
+  window.open(url, "_blank", "noopener,noreferrer");
+};
+
 </script>
 </body>
 </html>
