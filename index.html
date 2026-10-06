@@ -49,7 +49,7 @@
       border-radius: 9999px;
     }
     @media print {
-      header, nav, #quick-searches, #calculator-section, #checklist-actions, .no-print, #search-input-form, #app-toast, #mobile-menu, #trust-bar, .action-toolbar {
+      header, nav, #quick-searches, #checklist-actions, .no-print, #search-input-form, #app-toast, #mobile-menu, #trust-bar, .action-toolbar {
         display: none !important;
       }
       body {
@@ -222,9 +222,6 @@
         <button id="nav-standards" onclick="app.navigate('standards')" class="px-3.5 py-2 rounded-lg text-slate-600 hover:text-brand-navy hover:bg-slate-100 transition-all focus:outline-none">
           المعايير والمؤشرات
         </button>
-        <button id="nav-calc" onclick="app.navigate('calc')" class="px-3.5 py-2 rounded-lg text-slate-600 hover:text-brand-navy hover:bg-slate-100 transition-all focus:outline-none">
-          حاسبة الاستجابة 80%
-        </button>
         <button id="nav-checklist" onclick="app.navigate('checklist')" class="px-3.5 py-2 rounded-lg text-slate-600 hover:text-brand-navy hover:bg-slate-100 transition-all focus:outline-none">
           مؤشر الجاهزية
         </button>
@@ -242,11 +239,6 @@
         </span>
         <span class="font-bold text-slate-800">المرجعية المعرفية المعتمدة:</span>
         <span class="text-slate-600 font-medium">هيئة تقويم التعليم والتدريب والمصادر الرسمية المساندة</span>
-      </div>
-      <div class="flex items-center gap-2">
-        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-amber-100 text-amber-900 font-bold border border-amber-300">
-          نسبة الاستجابة النظامية: 80%
-        </span>
       </div>
     </div>
   </div>
@@ -304,9 +296,6 @@
             </button>
             <button onclick="app.quickSearch('المعلم الوحيد')" class="px-3 py-1.5 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium transition-all">
               المعلم الوحيد
-            </button>
-            <button onclick="app.quickSearch('نسبة ال 80%')" class="px-3 py-1.5 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium transition-all">
-              نسبة الـ 80%
             </button>
           </div>
 
@@ -404,30 +393,11 @@
             </div>
           </div>
 
-          <!-- بطاقة 5: حاسبة نسبة الاستجابة 80% -->
-          <div onclick="app.navigate('calc')" class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-brand-emerald transition-all cursor-pointer group flex flex-col justify-between">
-            <div class="space-y-3">
-              <div class="w-11 h-11 rounded-xl bg-teal-50 text-teal-700 border border-teal-200 flex items-center justify-center font-black group-hover:scale-110 transition-transform">
-                05
-              </div>
-              <h4 class="text-base font-bold text-slate-900 group-hover:text-brand-navy">
-                حاسبة الاستجابة النظامية (80%)
-              </h4>
-              <p class="text-xs text-slate-600 leading-relaxed">
-                احسب فورياً الحد الأدنى المقبول لاعتماد استبانات أولياء الأمور والمعلمين والطلبة بالتقريب للأعلى.
-              </p>
-            </div>
-            <div class="pt-4 mt-3 border-t border-slate-100 flex items-center justify-between text-xs text-brand-emerald font-bold">
-              <span>فتح الحاسبة التفاعلية</span>
-              <span>←</span>
-            </div>
-          </div>
-
-          <!-- بطاقة 6: مؤشر الجاهزية وقائمة المهام -->
+          <!-- بطاقة 5: مؤشر الجاهزية وقائمة المهام -->
           <div onclick="app.navigate('checklist')" class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-brand-emerald transition-all cursor-pointer group flex flex-col justify-between">
             <div class="space-y-3">
               <div class="w-11 h-11 rounded-xl bg-rose-50 text-rose-700 border border-rose-200 flex items-center justify-center font-black group-hover:scale-110 transition-transform">
-                06
+                05
               </div>
               <h4 class="text-base font-bold text-slate-900 group-hover:text-brand-navy">
                 مؤشر الجاهزية المدرسية للزيارة
@@ -630,7 +600,7 @@
           <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/60 space-y-1">
             <span class="font-black text-brand-emerald">الأداة 02</span>
             <h4 class="font-bold text-slate-900 text-sm">الاستبانات (المعلم، المتعلم، الأسرة)</h4>
-            <p class="text-slate-600">تستطلع رضا المستفيدين وبيئة التعلم، ويشترط ألا تقل الاستجابة عن 80% من العينة المطلوبة.</p>
+            <p class="text-slate-600">تستطلع رضا المستفيدين وبيئة التعلم من خلال الاستبانات المعتمدة.</p>
           </div>
           <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/60 space-y-1">
             <span class="font-black text-brand-emerald">الأداة 03</span>
@@ -718,53 +688,7 @@
       </div>
     </div>
 
-    <!-- المشهد 6: حاسبة نسبة الاستجابة 80% -->
-    <div id="view-calc" class="space-y-6 hidden">
-      <div id="calculator-section" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-5">
-        <div class="border-b border-slate-100 pb-3 flex items-center justify-between">
-          <div>
-            <h3 class="text-xl font-bold text-brand-navy">حاسبة نسبة الاستجابة النظامية (80%)</h3>
-            <p class="text-xs text-slate-500 mt-1">احسب الحد الأدنى المقبول للاستبانات لاعتماد مخرجاتها في التقويم الذاتي</p>
-          </div>
-          <button onclick="app.navigate('home')" class="text-xs font-bold text-brand-teal hover:underline">← العودة للرئيسية</button>
-        </div>
-
-        <div class="max-w-md mx-auto space-y-4">
-          <div class="space-y-1.5">
-            <label for="calc-total-input" class="text-xs font-bold text-slate-700">
-              إجمالي عدد الفئة المستهدفة (أولياء الأمور أو المعلمين أو الطلاب):
-            </label>
-            <div class="relative">
-              <input 
-                id="calc-total-input" 
-                type="number" 
-                min="1" 
-                step="1"
-                placeholder="أدخل العدد الإجمالي (مثلاً: 125 أو 37)"
-                oninput="app.calculateResponseRate()"
-                class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-emerald"
-              />
-            </div>
-            <p class="text-[11px] text-slate-500">يشترط النظام نسبة استجابة لا تقل عن 80% وتُقرّب دائماً للأعلى (Math.ceil).</p>
-          </div>
-
-          <!-- بطاقة رسالة الخطأ للمدخلات غير الصالحة -->
-          <div id="calc-error" class="hidden p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-xs font-bold text-rose-800">
-            يرجى إدخال عدد صحيح أكبر من صفر.
-          </div>
-
-          <!-- بطاقة نتيجة الحساب الصالحة -->
-          <div id="calc-result-box" class="hidden p-5 rounded-2xl bg-emerald-50 border border-emerald-300 text-center space-y-2">
-            <p class="text-xs font-semibold text-emerald-900">الحد الأدنى المطلوب نظاماً من الاستجابات المكتملة:</p>
-            <div class="text-3xl font-black text-brand-emerald" id="calc-result-number">0</div>
-            <p class="text-xs text-emerald-800">استجابة لاعتماد الأداة في تقرير المدرسة</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- المشهد 7: مؤشر الجاهزية وقائمة المهام -->
+    <!-- المشهد 6: مؤشر الجاهزية وقائمة المهام -->
     <div id="view-checklist" class="space-y-6 hidden">
       <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-5">
         <div class="border-b border-slate-100 pb-3 flex items-center justify-between">
@@ -784,10 +708,10 @@
           <div class="w-full bg-slate-200 rounded-full h-3 overflow-hidden">
             <div id="readiness-progress-bar" class="bg-gradient-to-r from-brand-emerald to-brand-teal h-full transition-all duration-300 w-0"></div>
           </div>
-          <p class="text-[11px] text-slate-500">تم إنجاز <span id="readiness-count-text">0</span> من أصل 8 مهام ميدانية أساسية.</p>
+          <p class="text-[11px] text-slate-500">تم إنجاز <span id="readiness-count-text">0</span> من أصل 7 مهام ميدانية أساسية.</p>
         </div>
 
-        <!-- قائمة المهام الثمانية الحقيقية مع المعرفات الثابتة c1 إلى c8 -->
+        <!-- قائمة المهام السبعة المعتمدة بعد حذف بند نسبة الاستجابة غير الموثق -->
         <div class="space-y-2.5" id="checklist-items-container">
           
           <!-- المهمة 1: c1 -->
@@ -847,18 +771,6 @@
                 <button type="button" onclick="event.stopPropagation(); app.showTaskSource('c5')" class="text-[11px] text-brand-teal font-semibold hover:underline">المصدر</button>
               </div>
               <p class="task-desc text-xs text-slate-500">تمكين الفريق من جدولة زيارات الملاحظة الصفية للتخصصات الأساسية الأربعة.</p>
-            </div>
-          </div>
-
-          <!-- المهمة 6: c6 -->
-          <div data-id="c6" onclick="app.toggleCheckItem('c6')" class="p-3.5 rounded-xl border border-slate-200 hover:border-brand-emerald bg-white transition-all cursor-pointer flex items-start gap-3 select-none">
-            <div class="check-box w-5 h-5 rounded border border-slate-300 flex items-center justify-center shrink-0 mt-0.5 text-xs font-black text-white"></div>
-            <div class="flex-grow space-y-0.5">
-              <div class="flex items-center justify-between">
-                <h4 class="task-title text-sm font-bold text-slate-800">التأكد من تحقيق نسبة الاستجابة النظامية للاستبانات (80%)</h4>
-                <button type="button" onclick="event.stopPropagation(); app.showTaskSource('c6')" class="text-[11px] text-brand-teal font-semibold hover:underline">المصدر</button>
-              </div>
-              <p class="task-desc text-xs text-slate-500">متابعة نسب استجابة المعلمين والطلاب وأولياء الأمور لضمان تفعيل الأداة بالتقرير.</p>
             </div>
           </div>
 
@@ -987,17 +899,6 @@
           ]
         },
         {
-          id: 'k3',
-          keywords: ['نسبة الاستجابة', '80%', 'الاستبانات', 'استبانة المعلم', 'استبانة الاسرة', 'حجم العينة'],
-          intent: 'response_rate',
-          title: 'الشرط النظامي لنسب الاستجابة في الاستبانات (80%)',
-          source: 'وثائق الدورة الثانية للتقويم المدرسي 1448هـ',
-          steps: [
-            'يشترط النظام ألا تقل نسبة الاستجابة الفعلية للاستبانات المستلمة عن 80% من حجم العينة المطلوبة لكي يتم تفعيل الأداة واعتماد مخرجاتها في التقرير النهائي للتقويم الذاتي.',
-            'تُحسب النسبة بضرب إجمالي الفئة المستهدفة في 0.8 مع التقريب دائماً للأعلى (Math.ceil).'
-          ]
-        },
-        {
           id: 'k4',
           keywords: ['المعايير', 'المؤشرات', 'عدد المؤشرات', 'الحكومي', 'الاهلي', 'العالمية', 'حقوق المتعلم'],
           intent: 'standards',
@@ -1035,7 +936,7 @@
       // التنقل بين المشاهد
       navigate(viewId) {
         this.currentView = viewId;
-        const views = ['home', 'visit', 'obs', 'evidence', 'standards', 'calc', 'checklist'];
+        const views = ['home', 'visit', 'obs', 'evidence', 'standards', 'checklist'];
         views.forEach(v => {
           const el = document.getElementById('view-' + v);
           const navBtn = document.getElementById('nav-' + v);
@@ -1069,7 +970,7 @@
       setupNavigation() {
         try {
           const hash = window.location.hash.replace('#', '');
-          if (hash && ['home', 'visit', 'obs', 'evidence', 'standards', 'calc', 'checklist'].includes(hash)) {
+          if (hash && ['home', 'visit', 'obs', 'evidence', 'standards', 'checklist'].includes(hash)) {
             this.navigate(hash);
           }
         } catch (e) {
@@ -1191,39 +1092,6 @@
         }
       },
 
-      // حاسبة نسبة الاستجابة 80% مع التحقق الرياضي الصارم
-      calculateResponseRate() {
-        const inputEl = document.getElementById('calc-total-input');
-        const errEl = document.getElementById('calc-error');
-        const resultBox = document.getElementById('calc-result-box');
-        const resultNum = document.getElementById('calc-result-number');
-        if (!inputEl || !errEl || !resultBox || !resultNum) return;
-
-        const rawValue = inputEl.value.trim();
-
-        // رفض الحقل الفارغ
-        if (rawValue === '') {
-          errEl.classList.remove('hidden');
-          resultBox.classList.add('hidden');
-          return;
-        }
-
-        const val = Number(rawValue);
-
-        // التحقق من كونه عدداً صحيحاً أكبر من صفر وبلا كسور
-        if (isNaN(val) || val <= 0 || !Number.isInteger(val)) {
-          errEl.classList.remove('hidden');
-          resultBox.classList.add('hidden');
-          return;
-        }
-
-        // مدخل صالح: إخفاء رسالة الخطأ وحساب 80% بالتقريب للأعلى
-        errEl.classList.add('hidden');
-        const required = Math.ceil(val * 0.8);
-        resultNum.textContent = required;
-        resultBox.classList.remove('hidden');
-      },
-
       // إدارة قائمة التدقيق وحفظها في LocalStorage
       loadChecklistState() {
         try {
@@ -1310,7 +1178,6 @@
           c3: 'لقاء تميز للتقويم الخارجي - ضوابط توفير المقر المدرسي المستقل والاعتدال.',
           c4: 'إجراءات ما قبل الزيارة - بيانات التواصل للأسر والمعلمين والمختصين.',
           c5: 'الخطة الدراسية - تمكين الفريق من جدولة زيارات الحصص للتخصصات الأساسية.',
-          c6: 'شروط الدورة الثانية 1448هـ - اشتراط نسبة استجابة 80% للاستبانات.',
           c7: 'توجيهات وحدة التميز - مطابقة الشواهد لواقع المدرسة والبعد عن الشواهد الصورية.',
           c8: 'وثائق الهيئة 1448هـ - عقد اللقاء التعريفي بما لا يزيد عن 40 دقيقة وترسيخ الشفافية.'
         };
